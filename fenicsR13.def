@@ -1,0 +1,51 @@
+Bootstrap: docker
+From: quay.io/fenicsproject/stable:2019.1.0.r3
+
+# Metadata
+#Labels:
+#    Maintainer: Lambert Theisen <lambert.theisen@rwth-aachen.de>
+#    Description: Linearized R13 Equations Solver Environment
+
+# Environment variables
+%environment
+    export CXX=g++
+    export CC=gcc
+    #export GMSH_VERSION=4.4.0
+    #export PATH=/usr/local/gmsh-${GMSH_VERSION}-Linux64-sdk/bin:$PATH
+
+# Install additional packages and software
+%post
+    # Update and install basic packages
+    apt-get update && \
+    apt-get install -y \
+        libglu1 \
+        libxcursor-dev \
+        libxinerama1 \
+        numdiff \
+        htop \
+
+    # Download and install GMSH SDK
+    #cd /usr/local && \
+    #wget -nc http://gmsh.info/bin/Linux/gmsh-${GMSH_VERSION}-Linux64-sdk.tgz && \
+    #tar -xf gmsh-${GMSH_VERSION}-Linux64-sdk.tgz
+
+    # Install Python packages
+    pip install -r /fenicsR13/requirements.txt
+
+    # Install the fenicsR13 package
+    pip install --editable /fenicsR13/.
+
+    # Replace default WELCOME screen
+    echo "Built: $(date)" > /WELCOME
+
+# Add files
+%files
+    ./requirements.txt /fenicsR13/requirements.txt
+    . /fenicsR13
+    WELCOME /
+
+# Default command
+%runscript
+    echo "Welcome to the Linearized R13 Equations Solver Environment"
+    /bin/bash
+

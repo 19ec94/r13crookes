@@ -1,0 +1,4 @@
+[console_scripts]
+fenicsR13 = fenicsR13.fenicsR13:main
+geoToH5 = fenicsR13.geoToH5:geo_to_h5
+

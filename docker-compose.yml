@@ -1,0 +1,40 @@
+version: '3.2'
+
+services:
+  fenicsr13_release:
+    image: registry.git.rwth-aachen.de/lamboo/fenicsr13:latest
+    working_dir: /home/fenics/shared
+    volumes:
+      - type: bind
+        source: .
+        target: /home/fenics/shared
+      - type: volume
+        source: instant-cache
+        target: /home/fenics/.cache
+        volume:
+          nocopy: true
+    stdin_open: true
+    tty: true
+    shm_size: "1024m" # MPI issue https://github.com/FEniCS/dolfinx/issues/994
+  fenicsr13_debug:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /home/fenics/shared
+    volumes:
+      # The following fails if folder not found => removed
+      # - ~/.gitconfig:/etc/gitconfig:ro # copy Git config to commit correctly
+      - type: bind
+        source: .
+        target: /home/fenics/shared
+      - type: volume
+        source: instant-cache
+        target: /home/fenics/.cache
+        volume:
+          nocopy: true
+    stdin_open: true
+    tty: true
+    shm_size: "1024m" # MPI issue https://github.com/FEniCS/dolfinx/issues/994
+
+volumes:
+  instant-cache:
