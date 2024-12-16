@@ -18,9 +18,9 @@ To run and interact with this project, you will need to install the following so
 The repository contains the following folders and their respective content:
 
 - **`fenicsR13`**: This folder contains the source code implementing the R13 moment equations and the simulation logic for the Crooks radiometer. This is adopted from Lambert's work.
-- **`3d_crooks`**: This folder contains containerized environments (Docker/Apptainer) along with necessary input files and post-processing calculations. It includes simulations for various geometries, such as:
-  - Circle
-  - Rectangle
+- **`3d_crooks`**: This folder contains necessary input files and post-processing calculations. It includes simulations for various geometries, such as:
+  - Circle-shaped vane
+  - Rectangle-shaped vane
   - Diamond-shaped vane
 
 ## Getting Started
@@ -38,3 +38,10 @@ Clone the repository to your local machine using the following command:
 ```bash
 git clone https://github.com/19ec94/r13crooks.git
 cd r13crooks
+
+### 2. Set up the Simulation Environment
+
+you can use Apptainer to run the containers. Ensure you have Apptainer installed and then run:
+
+```bash
+apptainer run fenicsr13.sif
