@@ -36,7 +36,7 @@ Make sure that the required software listed above is installed.
 Clone the repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/19ec94/r13crooks.git
+git clone https://github.com/19ec94/r13crookes.git
 cd r13crooks
 ```
 
