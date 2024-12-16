@@ -38,6 +38,7 @@ Clone the repository to your local machine using the following command:
 ```bash
 git clone https://github.com/19ec94/r13crooks.git
 cd r13crooks
+```
 
 ### 2. Set up the Simulation Environment
 
@@ -45,3 +46,4 @@ you can use Apptainer to run the containers. Ensure you have Apptainer installed
 
 ```bash
 apptainer run fenicsr13.sif
+```
