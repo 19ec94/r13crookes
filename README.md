@@ -17,7 +17,7 @@ To run and interact with this project, you will need to install the following so
 
 The repository contains the following folders and their respective content:
 
-- **`fenicsR13`**: This folder contains the source code implementing the R13 moment equations and the simulation logic for the Crooks radiometer. This is adopted from [Lambert's work](https://github.com/lambooo/fenicsr13).
+- **`fenicsR13`**: This folder contains the source code implementing the R13 moment equations and the simulation logic for the Crooks radiometer. This is adopted from [Lambert Theisen's work](https://github.com/lambooo/fenicsr13).
 - **`3d_crooks`**: This folder contains necessary input files and post-processing calculations. It includes simulations for various geometries, such as:
   - Circle-shaped vane
   - Rectangle-shaped vane
