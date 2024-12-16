@@ -1,8 +1,8 @@
-# r13 crooks
+# r13 crookes
 
 ## Description
 
-`r13 crooks` is a project that simulates the behavior of a **Crooks radiometer** using the **R13 moment equations**. This project contains source code that models the radiometer's performance across various geometries, including circle, rectangle, and diamond-shaped vane simulations. The radiometer's operation is governed by thermodynamic principles, and the R13 equations provide a framework for understanding its dynamics.
+`r13crookes` is a project that simulates the behavior of a **Crookes radiometer** using the **R13 moment equations**. This project contains source code that models the radiometer's performance across various geometries, including circle, rectangle, and diamond-shaped vane simulations. The radiometer's operation is governed by thermodynamic principles, and the R13 equations provide a framework for understanding its dynamics.
 
 ## Required Software
 
